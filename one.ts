@@ -80,3 +80,91 @@ const user={
     age:25
 }
 createUser(user)
+
+
+//Type Aliases
+
+type Userr={
+    name:string,
+    isActive:boolean,
+    email:string
+}
+
+function createUser2(user:Userr){ //sets the object type according to the type alias
+
+    console.log(user)
+
+}
+
+const user22={ 
+    name:"Hayan",
+    
+    email:"faf@afa.com",
+    isActive:true
+}
+
+createUser2(user22) //the type of argument is set according to the type alias
+
+
+//Readonly and optional in typescript
+
+type UUser={
+    readonly _id:string,  //no One can change the value of _id
+    name:string,
+    isActive:boolean,
+    email:string
+    ccDetails?:number //now this property is optional
+}
+
+let myUser:UUser={
+    _id:"123",
+    name:"Hayan",
+    email:"dad@faf.com",
+    isActive:true 
+}
+
+
+myUser.name="Hayan2"; //this is allowed
+// myUser._id="1234"; //this is not allowed as _id is readonly
+
+
+type cardNumber={
+    cardNumber:number,
+}
+
+type cardDate={
+    cardDate:string,
+}
+
+type cardDetails=cardNumber & cardDate & {
+    cvv:number
+}; //combining
+
+
+//Union in typescript
+
+let score:string|number="33"; //can be either string or number
+
+type UUUSER={
+    name:string,
+    id:number
+}
+
+type Admin={
+    username:string,
+    id:number,
+    
+}
+
+let hayann:UUUSER|Admin={name:"Hayan",id:1} //can be either of the two types
+console.log(hayann)
+hayann={username:"Hayan",id:1}
+console.log(hayann)
+
+const data:(string|number)[]=[1,2,3,4,5,6,7,8,9,10,"11"];
+const data1:{}[]=[] //defined as an array of objects
+
+let pi:3.14=3.14; //this is a literal type of assigning a value to a variable
+
+
+export {} //to avoid the error of redeclaration of block scoped variable
