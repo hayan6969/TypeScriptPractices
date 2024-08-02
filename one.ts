@@ -165,6 +165,6 @@ const data:(string|number)[]=[1,2,3,4,5,6,7,8,9,10,"11"];
 const data1:{}[]=[] //defined as an array of objects
 
 let pi:3.14=3.14; //this is a literal type of assigning a value to a variable
-
-
+ let seatAllotment:"window"|"middle"|"aisle"; //this is a literal type of assigning a value to a variable
+seatAllotment="window";
 export {} //to avoid the error of redeclaration of block scoped variable
