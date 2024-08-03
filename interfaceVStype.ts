@@ -36,7 +36,7 @@ let admin:Admin={
     class User1{
 
         //for private in javascript, we use # before the variable name
-        private email:string;  //cant be accessed outside the class
+        protected email:string;  //cant be accessed outside the class
         public userId:number;  //can be accessed outside the class, automatically public if not specified
     
         constructor(email:string,userId:number){
@@ -75,11 +75,49 @@ let admin:Admin={
             return this._email
         }
 
-        set email(value:string){
+        set email(value:string){ //setters cannot return a value
             if(value.includes("@")){
                 this._email=value
             }else{
                 throw new Error("Invalid email")
             }
+            
         }
     }
+
+
+    class subUser extends User1{
+        //wont take the private variable email from the parent class
+        //to access the private variable email from the parent class, we use protected
+
+        isFamily:boolean=true;
+        constructor(email:string,userId:number){
+            super(email,userId)
+        }
+
+        
+    }
+
+
+
+    //abstract classes in typescript
+
+
+    abstract class User4{
+        constructor(protected email:string,public userId:number){}
+
+        abstract changeEmail():void //this is undefined and will be defined in the child class must
+    }
+
+    class Instagram extends User4{
+        constructor(email:string,userId:number){
+            super(email,userId)
+        }
+
+        changeEmail():void{
+            this.email="dcaca"
+        }
+    }
+
+    // const user4=new User4("dcaca",1) // this will give an error because abstract classes cannot be instantiated and no new object can be created from it
+    //you can inherit from an abstract class and then create an object from the child class
