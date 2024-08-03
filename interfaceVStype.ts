@@ -63,3 +63,23 @@ let admin:Admin={
     console.log(hhh.city)
     // console.log(hhh.email) //this will give an error because email is private
     console.log(hhh.name)
+
+
+
+    //getters and setters in typescript
+
+    class User3{
+       constructor(private _email:string){}  //this is a convention to use _ before the variable name
+
+        get email():string{
+            return this._email
+        }
+
+        set email(value:string){
+            if(value.includes("@")){
+                this._email=value
+            }else{
+                throw new Error("Invalid email")
+            }
+        }
+    }
