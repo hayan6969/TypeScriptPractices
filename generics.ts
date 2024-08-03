@@ -31,8 +31,31 @@ function getSearchProducts<T>(products:T[]):T{
 }
 
 
-const getMoreSearchProducts=<T>(products:T[]):T=>{
+const getMoreSearchProducts=<T>(products:T[]):T=>{ //we will find <T,> in many places liek react to tell that its not an html tag but a generic
     //do some database operations
     return products[0];
 }
+
+
+//Generics in classes
+
+interface Quiz{
+    question:string;
+    answer:string;
+}
+
+interface Course{
+    title:string;
+    price:number;
+}
+
+class Sellable<T>{
+    // constructor(public Cart:T[]){}
+    public cart:T[] = [];
+    addToCart(product:T){
+        this.cart.push(product);
+    }
+}
+
+
 
