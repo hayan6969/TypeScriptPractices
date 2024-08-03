@@ -167,4 +167,39 @@ const data1:{}[]=[] //defined as an array of objects
 let pi:3.14=3.14; //this is a literal type of assigning a value to a variable
  let seatAllotment:"window"|"middle"|"aisle"; //this is a literal type of assigning a value to a variable
 seatAllotment="window";
+
+//tuples in typescript
+
+//a specialized array with some restrictions
+
+const arr:(string|number) []=["Hayan","25","true",1]; //this is a normal array
+let arr2:[string,number,boolean];
+arr2=["Hayan",25,true]; //this is a tuple
+
+
+
+
 export {} //to avoid the error of redeclaration of block scoped variable
+
+
+
+//Interfaces in typescript
+
+interface Userrr{
+
+    email:string,
+    userId:number
+}
+
+interface format{
+    id:number,
+    (name:string):string
+}
+
+type formatt={
+    id:number,
+    (name:string):string
+}
+
+
+
