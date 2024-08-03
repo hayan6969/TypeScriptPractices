@@ -23,3 +23,16 @@ interface Bottle{
 
 indentityTwo<Bottle>({brand:'a',type:'b'});  //giving it a custom interface
 
+
+//generics in arrays and arrow functions
+
+function getSearchProducts<T>(products:T[]):T{
+    return products[0];
+}
+
+
+const getMoreSearchProducts=<T>(products:T[]):T=>{
+    //do some database operations
+    return products[0];
+}
+
