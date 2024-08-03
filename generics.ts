@@ -58,4 +58,8 @@ class Sellable<T>{
 }
 
 
+//type narrowing in typescript
+
+
+
 
